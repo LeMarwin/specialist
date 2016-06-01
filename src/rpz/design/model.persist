@@ -50,3 +50,28 @@ WMA
   predict PredictId
   windowSize Int
   weights Text
+
+Region
+  name Text
+
+Country
+  name Text
+  alpha Text
+  regin RegionId
+  geojson Text
+  UniqueCountry alpha
+
+Province
+  name Text
+  alpha Text
+  country CountryId
+  geojson Text
+  UniqueProvince alpha
+
+Scenario
+  name Text
+  geojson Text
+
+Article
+  name Text
+  mdtext Text
