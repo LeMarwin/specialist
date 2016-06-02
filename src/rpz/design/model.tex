@@ -1,4 +1,4 @@
-\paragraph{Проектирование структуры базы данных} \hfill
+\subsubsection{Проектирование структуры базы данных} \hfill
 
 Проектирование структуры БД является очень важным этапом, от которого зависят последующие этапы разработки АИС. Время, затраченное разработчиком на проектирование схемы БД, обычно окупается высокой скоростью реализации проекта.
 
@@ -310,4 +310,266 @@
 \lstset{caption={Даталогическая модель данных на языке Haskell Persistent},label=PersistentModel}
 \lstinputlisting{design/model.persist}
 
-\paragraph{Разработка архитектуры АСОИУ} \hfill
+\begin{table}[h!]
+\centering
+\caption{Таблица <<saved\_query>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id               & bigint            & not null & none \\
+name             & character varying & not null & none \\
+alpha            & character varying & not null & none \\
+full\_text\_query  & character varying &  & none \\
+additional\_query & character varying &  & none \\
+begin\_date       & date              &  & none \\
+end\_date         & date              &  & none \\
+begin\_crawl\_date & date              &  & none \\
+end\_crawl\_date   & date              &  & none \\
+result\_offset    & bigint            &  & none \\
+result\_page\_size & bigint            &  & none \\
+sort\_field       & character varying &  & none \\
+sort\_dir         & boolean           &  & none \\
+no\_tags          & boolean           & not null & none \\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<predict>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id             & bigint            & not null & none \\
+saved\_id       & bigint            & not null & none \\
+name           & character varying & not null & none \\
+descr          & character varying & not null & none \\
+origin         & date              & not null & none \\
+predict\_window & bigint            &  & none \\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<measure>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id      & bigint & not null & none \\
+predict & bigint & not null & none \\
+day     & date   & not null & none \\
+value   & bigint & not null & none \\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<population>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id         & bigint & not null & none \\
+predict    & bigint & not null & none \\
+generation & bigint & not null & none \\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<formula>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id         & bigint            & not null & none \\
+text       & character varying & not null & none \\
+fittness   & double precision  & not null & none \\
+population & bigint            & not null & none \\
+
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<fittness>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id         & bigint           & not null & none \\
+population & bigint           & not null & none \\
+best       & double precision & not null & none \\
+average    & double precision & not null & none \\
+generation & bigint           & not null & none \\
+
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<polynom>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id      & bigint            & not null & none \\
+predict & bigint            & not null & none \\
+thetas  & character varying & not null & none \\
+mse     & double precision  & not null & none \\
+
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<w\_m\_a>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id          & bigint            & not null & none \\
+predict     & bigint            & not null & none \\
+window\_size & bigint            & not null & none \\
+weights     & character varying & not null & none \\
+
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<region>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id     & bigint            & not null & none \\
+name   & character varying & not null & none \\
+
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<country>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id      & bigint            & not null & none \\
+name    & character varying & not null & none \\
+alpha   & character varying & not null & none \\
+region  & bigint            & not null & none \\
+geojson & character varying & not null & none \\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<province>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id      & bigint            & not null & none \\
+name    & character varying & not null & none \\
+alpha   & character varying & not null & none \\
+country & bigint            & not null & none \\
+geojson & character varying & not null & none \\
+
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<scenario>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id      & bigint            & not null & none \\
+name    & character varying & not null & none \\
+geojson & character varying & not null & none \\
+
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Таблица <<article>>}
+\label{table:entityMeasure}
+\begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
+\multicolumn{1}{C{4cm}|}{Имя поля} & 
+\multicolumn{1}{C{4cm}|}{Тип данных} &
+\multicolumn{1}{C{4cm}|}{Свойства поля} &
+\multicolumn{1}{C{4cm}}{Описание} \\
+\hline\hline
+
+id      & bigint            & not null & none \\
+name    & character varying & not null & none \\
+mdtext  & character varying & not null & none \\
+
+\end{tabular}
+\end{table}

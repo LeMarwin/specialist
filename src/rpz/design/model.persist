@@ -1,4 +1,4 @@
-Query
+SavedQuery
   name Text
   alpha Text
   fullTextQuery Text Maybe
@@ -9,12 +9,12 @@ Query
   endCrawlDate Day Maybe
   resultOffset Int Maybe
   resultPageSize Int Maybe
-  sortField SortField Maybe
-  sortDir SortDir Maybe
+  sortField Text Maybe
+  sortDir Bool Maybe
   noTags Bool
 
 Predict
-  savedId QueryId
+  savedId SavedQueryId
   name Text
   descr Text
   origin Day 
@@ -57,7 +57,7 @@ Region
 Country
   name Text
   alpha Text
-  regin RegionId
+  region RegionId
   geojson Text
   UniqueCountry alpha
 
