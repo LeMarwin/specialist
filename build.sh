@@ -8,10 +8,10 @@ cp $1/src/Common.hs $1/build/design
 $1/$2 $1/src/rpz/design/arch
 
 mkdir -p $1/build/technology
-mkdir -p $1/build/science
+mkdir -p $1/build/research
 cp -r $1/src/rpz/design/* $1/build/design
 cp -r $1/src/rpz/technology/* $1/build/technology
-cp -r $1/src/rpz/science/* $1/build/science
+cp -r $1/src/rpz/research/* $1/build/research
 
 cd $1/src/rpz/design 
 persist2er --input model.persist --output $1/build/model.er --title "Даталогическая модель" --size 1

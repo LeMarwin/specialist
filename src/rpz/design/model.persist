@@ -19,6 +19,7 @@ Predict
   descr Text
   origin Day 
   predictWindow Int Maybe
+  predictTarget Int Maybe
 
 Measure 
   predict PredictId

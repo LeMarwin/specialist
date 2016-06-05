@@ -1,25 +1,25 @@
 \subsubsection{Проектирование структуры базы данных} \hfill
 
-Проектирование структуры БД является очень важным этапом, от которого зависят последующие этапы разработки АИС. Время, затраченное разработчиком на проектирование схемы БД, обычно окупается высокой скоростью реализации проекта.
+Проектирование схемы БД является очень важным этапом, от которого зависят последующие этапы разработки АИС. Время, затраченное на проектирование схемы БД, обычно окупается высокой скоростью реализации проекта.
 
 На этапе внешнего проектирования связанного с анализом предметной области были выделены объекты, которые должны использоваться для представления предметной области. То есть была проведена предварительная структуризация объектов предметной области: объекты реального мира подверглись классификации, была зафиксирована совокупность подлежащих отображению в БД типов объектов. Для каждого типа объектов были зафиксирована совокупность свойств, посредством которых должны описываться конкретные объекты этого типа в БД, виды отношений (взаимосвязей) между этими объектами. Следующим шагом является решение вопроса, какая информация об объектах должна быть представлена в БД и как ее представить с помощью данных. Сущность инфологического этапа проектирования является установление соответствия между состоянием предметной области, его восприятием и представлением в БД.
 
-На этапе инфологического проектирования используется неформальная модель предметной области типа <<сущность -- связь>>. Это модель позволяет моделировать объекты ПО, взаимоотношения объектов. Основное назначение неформальной модели <<сущность -- связь>> является семантическое описание предметной области и представление информации для обоснования выбора видов моделей и структур данных, которые в дальнейшем будут использованы в системе. Для построения модели типа <<сущность -- связь>> используются три основных конструктивных элемента для представления составляющих ПО – сущность, атрибут и связь.
+На этапе инфологического проектирования используется неформальная модель предметной области: <<сущность -- связь>>. Это модель позволяет моделировать объекты ПО, взаимоотношения объектов. Основное назначение неформальной модели <<сущность -- связь>> является семантическое описание предметной области и представление информации для обоснования выбора видов моделей и структур данных, которые в дальнейшем будут использованы в системе. Для построения модели типа <<сущность -- связь>> используются три основных конструктивных элемента: сущность, атрибут и связь.
 
-\textbf{Сущность} -- это собирательное понятие, некоторая абстракция реально существующего объекта, процесса или явления, о котором необходимо хранить информацию в системе. В качестве сущности в моделях ПО рассматриваются материальные (сотрудник, справка и т.д.) и не материальные (описание некоторого явления, рефераты научных статей и т.д.) объекты реальной действительности. В моделях ПО типа <<сущность -- связь>> каждая рассматриваемая конкретная сущность является узловой точкой сбора информации об этой сущности. В модели также используется понятие <<экземпляр сущности>>. Тип сущности определяет набор однородных объектов, а экземпляр сущности -- конкретный объект в наборе.
+\textbf{Сущность} -- собирательное понятие, абстракция реально существующего объекта, процесса или явления, о котором необходимо хранить информацию в системе. В качестве сущности в моделях ПО рассматриваются материальные (сотрудник, справка и т.д.) и не материальные (описание некоторого явления, рефераты научных статей и т.д.) объекты реальной действительности. В моделях ПО типа <<сущность -- связь>> каждая рассматриваемая конкретная сущность является узловой точкой сбора информации об этой сущности. В модели также используется понятие <<экземпляр сущности>>. Тип сущности определяет набор однородных объектов, а экземпляр сущности -- конкретный объект в наборе.
 
 \textbf{Атрибут} -- это поименованная характеристика сущности, которая принимает значение из некоторого множества значений. В модели атрибут выступает в качестве средства, с помощью которого моделируются свойства сущностей. Основное назначение атрибута – описание свойства сущности, а также идентификация экземпляра сущностей.
 
-\textbf{Связь} выступает в модели в качестве средства, с помощью которого представляются отношения между сущностями, имеющими место в предметной области. Тип связи рассматривается между типами сущностей, а конкретный экземпляр связи рассматриваемого типа существует между конкретными экземплярами рассматриваемых типов сущностей. При анализе связей между сущностями могут встречаться бинарные (между двумя сущностями), тернарные (между тремя сущностями) и, в общем случае n-арные связи. Может также встречаться унарные (рекурсивные) связи, когда экземпляр определенного типа сущности связан с другим экземпляром той же самой сущности. Наиболее часто встречаются бинарные связи. Для определения характера взаимосвязей между двумя типами сущностей используются прямое и обратное отображения между двумя соответствующими множествами экземпляров сущностей. При проведении классификации видов связей обычно выделяют следующие виды связей: 1:1, 1:M, M:1, M:N.
+\textbf{Связь} выступает в модели в качестве средства, с помощью которого представляются отношения между сущностями предметной области. Тип связи рассматривается между типами сущностей, а конкретный экземпляр связи рассматриваемого типа существует между конкретными экземплярами рассматриваемых типов сущностей. При анализе связей между сущностями могут встречаться бинарные (между двумя сущностями), тернарные (между тремя сущностями) и, в общем случае n-арные связи. Может также встречаться унарные (рекурсивные) связи, когда экземпляр определенного типа сущности связан с другим экземпляром той же самой сущности. Наиболее часто встречаются бинарные связи. Для определения характера взаимосвязей между двумя типами сущностей используются прямое и обратное отображения между двумя соответствующими множествами экземпляров сущностей. При проведении классификации видов связей обычно выделяют следующие виды связей: 1:1, 1:M, M:1, M:N.
 
-Для представления инфологической модели предметной области могут использоваться два варианта записи:
+Инфологическая модель представляется двумя вариантами записи:
 \begin{itemize}
 \item Спецификационная форма инфологической модели ПО;
 \item Графическая диаграмма инфологической модели ПО.
 \end{itemize}
 
 \subsubsubsection{Обоснование выбора инструментария проектирования}
-В качестве инструментария проектирования даталогической модели базы данных был выбран проблемно-ориентированный язык Haskell Persistent. Данный язык обладает существенными преимуществами перед аналогами:
+Для проектирования даталогической модели был выбран проблемно-ориентированный язык Haskell Persistent, который обладает следующими преимуществами:
 \begin{itemize}
 \item Интеграция с языком программирования Haskell -- типы БД непосредственно используются в проектируемой программе без ручного кодирования;
 \item Автоматические миграции -- если схема БД изменилась во время проектирования, то данный язык предоставляет средства автоматической миграции данных между схемами;
@@ -48,6 +48,8 @@
 \hline\hline
 
 Код запроса (PK) & Идентифицирующий атрибут \\
+Название запроса & Название запроса \\
+Альфа-код запроса & Код страны/провинции, описываемой запросом по ISO 3166 \\
 Полнотекстовый запрос & Основная часть запроса \\
 Дополнительный запрос & Дополнительные фильтры результатов \\
 Начальная дата & Минимальная дата результата \\
@@ -58,9 +60,6 @@
 Размер страницы & Максимальное количество документов, которое нужно вернуть в результатах \\
 Поле сортировки & Поле, по которому следует отсортировать результаты \\
 Направление сортировки & Сортировка по убыванию или возрастанию \\
-Без рубрики & Признак поиска только нерубрицированных документов \\
-Без источника & Признак поиска только документов без источника \\
-Родительская рубрика (FK) & Код родительской рубрики, в которой хранится запрос \\
 Без меток & Признак поиска только документов без меток \\
 
 \end{tabular}
@@ -80,8 +79,9 @@
 Название & Название прогноза \\
 Описание & Описание прогноза \\
 Точка отсчета & Начальная точка прогноза \\
-Окно эволюции & Количество точек от текущей даты для обучения алгоритма \\
-Отключен & Признак неактивности прогноза \\
+Окно обучения & Количество точек от текущей даты для обучения алгоритма \\
+Период прогноза & Количество дней в будущее для которого строится прогноз \\
+
 \end{tabular}
 \end{table}
 
@@ -313,28 +313,28 @@
 \begin{table}[h!]
 \centering
 \caption{Таблица <<saved\_query>>}
-\label{table:entityMeasure}
+\label{table:savedQueryDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id               & bigint            & not null & none \\
-name             & character varying & not null & none \\
-alpha            & character varying & not null & none \\
-full\_text\_query  & character varying &  & none \\
-additional\_query & character varying &  & none \\
-begin\_date       & date              &  & none \\
-end\_date         & date              &  & none \\
-begin\_crawl\_date & date              &  & none \\
-end\_crawl\_date   & date              &  & none \\
-result\_offset    & bigint            &  & none \\
-result\_page\_size & bigint            &  & none \\
-sort\_field       & character varying &  & none \\
-sort\_dir         & boolean           &  & none \\
-no\_tags          & boolean           & not null & none \\
+id               & bigint            & not null, PK & Код запроса \\
+name             & character varying & not null & Название запроса \\
+alpha            & character varying & not null & Альфа-код запроса \\
+full\_text\_query  & character varying &  & Полнотекстовый запрос \\
+additional\_query & character varying &  & Дополнительный запрос \\
+begin\_date       & date              &  & Начальная дата \\
+end\_date         & date              &  & Конечная дата \\
+begin\_crawl\_date & date              &  & Начальная дата сбора \\
+end\_crawl\_date   & date              &  & Конечная дата сбора \\
+result\_offset    & bigint            &  & Смещение результата \\
+result\_page\_size & bigint            &  & Размер страницы \\
+sort\_field       & character varying &  & Поле сортировки \\
+sort\_dir         & boolean           &  & Направление сортировки \\
+no\_tags          & boolean           & not null & Без меток \\
 
 \end{tabular}
 \end{table}
@@ -342,20 +342,21 @@ no\_tags          & boolean           & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<predict>>}
-\label{table:entityMeasure}
+\label{table:predictDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id             & bigint            & not null & none \\
-saved\_id       & bigint            & not null & none \\
-name           & character varying & not null & none \\
-descr          & character varying & not null & none \\
-origin         & date              & not null & none \\
-predict\_window & bigint            &  & none \\
+id             & bigint            & not null, PK & Код прогноза \\
+saved\_id      & bigint            & not null, FK & Сохранённый запрос \\
+name           & character varying & not null & Название  \\
+descr          & character varying & not null & Описание \\
+origin         & date              & not null & Точка отсчёта \\
+predict\_window & bigint            &  & Окно обучения \\
+predict\_target & bigint            &  & Период прогноза \\
 
 \end{tabular}
 \end{table}
@@ -363,18 +364,18 @@ predict\_window & bigint            &  & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<measure>>}
-\label{table:entityMeasure}
+\label{table:measureDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id      & bigint & not null & none \\
-predict & bigint & not null & none \\
-day     & date   & not null & none \\
-value   & bigint & not null & none \\
+id      & bigint & not null, PK & Код измерения \\
+predict & bigint & not null, FK & Прогноз \\
+day     & date   & not null & День \\
+value   & bigint & not null & Значение \\
 
 \end{tabular}
 \end{table}
@@ -382,17 +383,17 @@ value   & bigint & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<population>>}
-\label{table:entityMeasure}
+\label{table:populationDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id         & bigint & not null & none \\
-predict    & bigint & not null & none \\
-generation & bigint & not null & none \\
+id         & bigint & not null, PK & Код популяции \\
+predict    & bigint & not null, FK & Прогноз \\
+generation & bigint & not null & Поколение \\
 
 \end{tabular}
 \end{table}
@@ -400,18 +401,18 @@ generation & bigint & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<formula>>}
-\label{table:entityMeasure}
+\label{table:formulaDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id         & bigint            & not null & none \\
-text       & character varying & not null & none \\
-fittness   & double precision  & not null & none \\
-population & bigint            & not null & none \\
+id         & bigint            & not null, PK & Код формулы \\
+text       & character varying & not null & Текст \\
+fittness   & double precision  & not null & Приспособленность \\
+population & bigint            & not null, FK & none \\
 
 
 \end{tabular}
@@ -420,19 +421,19 @@ population & bigint            & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<fittness>>}
-\label{table:entityMeasure}
+\label{table:fittnessDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id         & bigint           & not null & none \\
-population & bigint           & not null & none \\
-best       & double precision & not null & none \\
-average    & double precision & not null & none \\
-generation & bigint           & not null & none \\
+id         & bigint           & not null, PK & Код приспособленности \\
+population & bigint           & not null, FK & Популяция \\
+best       & double precision & not null & Лучший \\
+average    & double precision & not null & Среднее \\
+generation & bigint           & not null & Поколение \\
 
 
 \end{tabular}
@@ -441,18 +442,18 @@ generation & bigint           & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<polynom>>}
-\label{table:entityMeasure}
+\label{table:polynomDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id      & bigint            & not null & none \\
-predict & bigint            & not null & none \\
-thetas  & character varying & not null & none \\
-mse     & double precision  & not null & none \\
+id      & bigint            & not null, PK & Код полинома \\
+predict & bigint            & not null, FK & Прогноз \\
+thetas  & character varying & not null & Параметры \\
+mse     & double precision  & not null & СКО \\
 
 
 \end{tabular}
@@ -461,18 +462,18 @@ mse     & double precision  & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<w\_m\_a>>}
-\label{table:entityMeasure}
+\label{table:wmaDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id          & bigint            & not null & none \\
-predict     & bigint            & not null & none \\
-window\_size & bigint            & not null & none \\
-weights     & character varying & not null & none \\
+id           & bigint            & not null, PK & Код скользящего среднего \\
+predict      & bigint            & not null, FK & Прогноз \\
+window\_size & bigint            & not null & Размер окна \\
+weights      & character varying & not null & Веса \\
 
 \end{tabular}
 \end{table}
@@ -481,16 +482,16 @@ weights     & character varying & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<region>>}
-\label{table:entityMeasure}
+\label{table:regionDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id     & bigint            & not null & none \\
-name   & character varying & not null & none \\
+id     & bigint            & not null, PK & Код региона \\
+name   & character varying & not null & Название региона \\
 
 
 \end{tabular}
@@ -499,19 +500,19 @@ name   & character varying & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<country>>}
-\label{table:entityMeasure}
+\label{table:countryDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id      & bigint            & not null & none \\
-name    & character varying & not null & none \\
-alpha   & character varying & not null & none \\
-region  & bigint            & not null & none \\
-geojson & character varying & not null & none \\
+id      & bigint            & not null, PK & Код страны \\
+name    & character varying & not null & Название \\
+alpha   & character varying & not null & Альфа-код \\
+region  & bigint            & not null, FK & Регион \\
+geojson & character varying & not null & Контур \\
 
 \end{tabular}
 \end{table}
@@ -519,19 +520,19 @@ geojson & character varying & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<province>>}
-\label{table:entityMeasure}
+\label{table:provinceDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id      & bigint            & not null & none \\
-name    & character varying & not null & none \\
-alpha   & character varying & not null & none \\
-country & bigint            & not null & none \\
-geojson & character varying & not null & none \\
+id      & bigint            & not null, PK & Код провинции \\
+name    & character varying & not null & Название \\
+alpha   & character varying & not null & Альфа-код \\
+country & bigint            & not null, FK & Страна \\
+geojson & character varying & not null & Контур \\
 
 
 \end{tabular}
@@ -540,17 +541,17 @@ geojson & character varying & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<scenario>>}
-\label{table:entityMeasure}
+\label{table:scenarioDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id      & bigint            & not null & none \\
-name    & character varying & not null & none \\
-geojson & character varying & not null & none \\
+id      & bigint            & not null, PK & Код сценария \\
+name    & character varying & not null & Название \\
+geojson & character varying & not null & Содержание \\
 
 
 \end{tabular}
@@ -559,17 +560,17 @@ geojson & character varying & not null & none \\
 \begin{table}[h!]
 \centering
 \caption{Таблица <<article>>}
-\label{table:entityMeasure}
+\label{table:articleDatalog}
 \begin{tabular}{L{4cm}|L{4cm}|L{4cm}|L{4cm}}
 \multicolumn{1}{C{4cm}|}{Имя поля} & 
 \multicolumn{1}{C{4cm}|}{Тип данных} &
 \multicolumn{1}{C{4cm}|}{Свойства поля} &
-\multicolumn{1}{C{4cm}}{Описание} \\
+\multicolumn{1}{C{4cm}}{Имя атрибута} \\
 \hline\hline
 
-id      & bigint            & not null & none \\
-name    & character varying & not null & none \\
-mdtext  & character varying & not null & none \\
+id      & bigint            & not null, PK & Код записки \\
+name    & character varying & not null & Название \\
+mdtext & character varying & not null & Содержание \\
 
 \end{tabular}
 \end{table}
