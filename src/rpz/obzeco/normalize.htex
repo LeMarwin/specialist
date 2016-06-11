@@ -806,7 +806,7 @@ N = \hatex{showr lightsRows} \cdot \hatex{showr lightsRowSize} = \hatex{showr li
 \item Общий световой поток искусственного освещения -- $\hatex{showr lightStream'}$ лм.
 \end{itemize}
 
-\subsubsection{Схема расположения светильников в помещении операторов ПЭВМ}
+\subsubsection{Схема расположения светильников в помещении с ПЭВМ}
 
 Схема расположения светильников в помещении изображена на рисунке~\ref{figure:lamps}.
 

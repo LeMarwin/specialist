@@ -7,7 +7,7 @@
 \ESKDdepartment{Федеральное государственное бюджетное образовательное учреждение высшего профессионального образования}
 \ESKDcompany{Московский государственный технический университет им. Н. Э. Баумана}
 \ESKDclassCode{23 0102}
-\ESKDtitle{Подсистема работы с текстовыми данными на географической карте «Волхв-Гео»}
+\ESKDtitle{Подсистема работы с текстовыми данными на географической карте «Волхв-ГЕО»}
 \ESKDdocName{Расчетно-пояснительная записка}
 \ESKDauthor{Оганян~Л.~П.}
 \ESKDtitleApprovedBy{~}{~\underline{\hspace{2.5cm}}}
@@ -66,7 +66,10 @@
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 
-%\renewcommand*{\thesection}{\arabic{section}}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\addcontentsline{toc}{section}{\refname}}{}{}{}
+
+\usepackage[toc,page]{appendix}
 
 %===========================================================================
 \begin{document}
@@ -120,8 +123,17 @@
 %===========================================================================
 \nocite{*}
 \clearpage
-\addcontentsline{toc}{chapter}{\bibname}
+\addcontentsline{toc}{section}{\bibname}
 \bibliographystyle{utf8gost705u}  %% стилевой файл для оформления по ГОСТу
 \bibliography{biblio}     %% имя библиографической базы (bib-файла) 
+\phantomsection\label{preLastPage}
 
+\clearpage
+
+\addcontentsline{toc}{section}{Приложение А. Техническое задание}
+\includepdf[pages=-]{tz.pdf}
+
+\addcontentsline{toc}{section}{Приложение Б. Графическая часть}
+\includepdf[pages=-]{lists_title.pdf}
+\includepdf[pages=-,landscape=true]{A1.pdf}
 \end{document}

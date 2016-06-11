@@ -44,6 +44,10 @@ cd $1/build
 cp $1/src/utf8gost705u.bst $1/build
 cp $1/src/biblio.bib $1/build
 
+cp $1/src/*.pdf $1/build
+rm $1/build/tz.pdf 
+pdflatex -synctex=1 -interaction=nonstopmode tz.tex
+
 rm $1/build/rpz.pdf 
 pdflatex -synctex=1 -interaction=nonstopmode rpz.tex
 xdg-open rpz.pdf
