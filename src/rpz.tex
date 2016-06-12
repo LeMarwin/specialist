@@ -71,6 +71,11 @@
 
 \usepackage[toc,page]{appendix}
 
+\renewcommand\bibname{Список использованных источников}
+\renewcommand\refname{Список использованных источников}
+\AtBeginDocument{\renewcommand{\bibname}{Список использованных источников}}
+\AtBeginDocument{\renewcommand{\refname}{Список использованных источников}}
+
 %===========================================================================
 \begin{document}
 
@@ -121,6 +126,11 @@
 \include{obzeco/results}
 
 %===========================================================================
+
+\include{conclusion}
+
+%===========================================================================
+
 \nocite{*}
 \clearpage
 \addcontentsline{toc}{section}{\bibname}
@@ -134,6 +144,6 @@
 \includepdf[pages=-]{tz.pdf}
 
 \addcontentsline{toc}{section}{Приложение Б. Графическая часть}
-\includepdf[pages=-]{lists_title.pdf}
+\includepdf[pages=1]{lists_face.pdf}
 \includepdf[pages=-,landscape=true]{A1.pdf}
 \end{document}
